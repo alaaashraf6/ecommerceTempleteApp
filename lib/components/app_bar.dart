@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 AppBar appBarOfApp() {
   return AppBar(
-    backgroundColor: Colors.grey[100],
+    backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
     leading: Container(
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(

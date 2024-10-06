@@ -16,31 +16,42 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
+  int currentIndex = 0;
+  List<Widget> screens = [
+    const ProductScreen(),
+    const SearchScreen(),
+    const CartScreen(),
+    const FavoritesScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
-    List<Widget> screens = [
-      const FavoritesScreen(),
-      const CartScreen(),
-      const SearchScreen(),
-      const ProductScreen(),
-    ];
-
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
       appBar: appBarOfApp(),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
           currentIndex: currentIndex,
-          onTap: (index) => {
-                setState(() {
-                  currentIndex = index;
-                })
-              },
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          selectedItemColor: Colors.blueAccent, // Color for selected items
+          unselectedItemColor: Colors.grey, // Color for unselected items
+          selectedFontSize: 14, // Font size of the selected item text
+          unselectedFontSize: 12, // Font size of the unselected item text
+          elevation: 10, // Shadow under the bar
+          iconSize: 30, // Size of the icons
+          showSelectedLabels: true, // Show the label for selected item
+          showUnselectedLabels: true,
+         
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
+              icon: Icon(
+                Icons.home_outlined,
+              ),
               label: 'Products',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
