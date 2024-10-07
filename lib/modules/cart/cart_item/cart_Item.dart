@@ -20,7 +20,7 @@ class CartItem extends StatelessWidget {
             ),
             Container(
               width: 100,
-              padding: EdgeInsetsDirectional.only(start: 20, bottom: 50),
+              padding: const EdgeInsetsDirectional.only(start: 20, bottom: 50),
               child: Transform.rotate(
                 angle: -0.6,
                 child: ClipRRect(
@@ -33,6 +33,14 @@ class CartItem extends StatelessWidget {
               ),
             ),
           ]),
+          const Column(
+            children: [Text('product name'), Text('price')],
+          ),
+          Container(
+            decoration:
+                const BoxDecoration(color: Color.fromRGBO(234, 234, 234, 1)),
+            child: const Text('x1'),
+          )
         ],
       ),
     );

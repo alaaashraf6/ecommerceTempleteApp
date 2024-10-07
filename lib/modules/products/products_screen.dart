@@ -8,40 +8,42 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        children: [
-          screenHeader('Our', 'Products', false),
-          // Search
-          SearchComponent(), // Fixed typo here
-          // Product cards
-          const Padding(
-            padding: EdgeInsets.all(20),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ProductCardScreen(
-                    productTitle: 'NIKE AIR MAX 200',
-                    productType: 'Trending now',
-                    productPrice: 240.00,
-                    productImage:
-                        'assets/images/nikeImg3.jpg', // This should now work
-                  ),
-                  ProductCardScreen(
-                    productTitle: 'NIKE AIR MAX 97',
-                    productType: 'Best Seller',
-                    productPrice: 220.00,
-                    productImage:
-                        'assets/images/nikeImg2.jpg', // This should now work
-                  ),
-                ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            screenHeader('Our', 'Products', false),
+            // Search
+            SearchComponent(), // Fixed typo here
+            // Product cards
+            const Padding(
+              padding: EdgeInsets.all(20),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ProductCardScreen(
+                      productTitle: 'NIKE AIR MAX 200',
+                      productType: 'Trending now',
+                      productPrice: 240.00,
+                      productImage:
+                          'assets/images/nikeImg3.jpg', // This should now work
+                    ),
+                    ProductCardScreen(
+                      productTitle: 'NIKE AIR MAX 97',
+                      productType: 'Best Seller',
+                      productPrice: 220.00,
+                      productImage:
+                          'assets/images/nikeImg2.jpg', // This should now work
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

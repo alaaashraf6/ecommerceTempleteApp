@@ -12,6 +12,30 @@ class CartScreen extends StatelessWidget {
         children: [
           screenHeader('Shipping', 'Cart', true),
           const CartItem(),
+          const Divider(
+            color: Color.fromRGBO(234, 234, 234, 1), // Line color
+            thickness: 2, // Line thickness
+            indent: 20, // Left spacing
+            endIndent: 20, // Right spacing
+          ),
+          const Row(
+            children: [
+              Text('3 Items'),
+              Text('Price'),
+            ],
+          ),
+          Container(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      252, 108, 32, 1)), // Set the background color
+              child: const Text(
+                'Next',
+              ),
+            ),
+          )
         ],
       ),
     );

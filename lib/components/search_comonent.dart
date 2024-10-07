@@ -1,4 +1,5 @@
 import 'package:eccomerce_templete_app/components/circle_component.dart';
+import 'package:eccomerce_templete_app/modules/products/product_details/product_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class SearchComponent extends StatelessWidget {
@@ -12,12 +13,14 @@ class SearchComponent extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
+        Container(
             height: 40, // Set a height for the TextFormField
-            width: 200, // Set a width for better layout
+            width: 250,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+            clipBehavior:
+                Clip.antiAliasWithSaveLayer, // Set a width for better layout
             child: TextFormField(
               controller: searchController,
-
               // Assign the controller
               decoration: const InputDecoration(
                 fillColor: Color.fromRGBO(234, 234, 234, 1),
@@ -45,8 +48,8 @@ class SearchComponent extends StatelessWidget {
           ),
           child: IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search),
-            iconSize: 25,
+            icon: const Icon(Icons.tune),
+            iconSize: 20,
           ),
         ),
       ],
