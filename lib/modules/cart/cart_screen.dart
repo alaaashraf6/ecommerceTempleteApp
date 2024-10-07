@@ -1,3 +1,4 @@
+import 'package:eccomerce_templete_app/modules/cart/cart_item/cart_Item.dart';
 import 'package:flutter/material.dart';
 import '../../components/screen_header.dart';
 
@@ -10,7 +11,7 @@ class CartScreen extends StatelessWidget {
       child: Column(
         children: [
           screenHeader('Shipping', 'Cart', true),
-          const Text('Cart Screen'),
+          const CartItem(),
         ],
       ),
     );

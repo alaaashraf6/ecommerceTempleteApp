@@ -9,6 +9,14 @@ AppBar appBarOfApp() {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2), // Shadow color
+            spreadRadius: 2, // Spread radius
+            blurRadius: 5, // Blur radius
+            offset: const Offset(0, 3), // Shadow position
+          ),
+        ],
       ),
       child: IconButton(
         onPressed: () {},
@@ -18,7 +26,7 @@ AppBar appBarOfApp() {
     ),
     actions: [
       CircleComponent(
-        Image.asset('assets/images/profile.jpg'),
+        child: Image.asset('assets/images/profile.jpg'),
       )
     ],
   );
