@@ -28,7 +28,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
-      appBar: appBarOfApp(),
+      appBar:  appBarOfApp(),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,

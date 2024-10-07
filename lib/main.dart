@@ -1,4 +1,4 @@
-import 'package:eccomerce_templete_app/layouts/home_layout.dart';
+import 'package:eccomerce_templete_app/layouts/custom_home_layout.dart';
 import 'package:flutter/material.dart';
 
 void main() {
