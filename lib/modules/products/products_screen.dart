@@ -1,49 +1,63 @@
 import 'package:eccomerce_templete_app/components/search_comonent.dart';
+import 'package:eccomerce_templete_app/modules/categories/category_horizental_list.dart';
+import 'package:eccomerce_templete_app/modules/categories/category_item.dart';
 import 'package:eccomerce_templete_app/modules/products/product_card/product_card_screen.dart';
 import 'package:flutter/material.dart';
 import '../../components/screen_header.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({super.key});
+  ProductScreen({super.key});
+
+   List<Map<String, dynamic>> productCard = [
+    {
+      'image': 'assets/images/nikeImg.png',
+      'name': 'Nike Shoes',
+      'type': 'Sneakers',
+      'price': 200.0
+    },
+    {
+      'image': 'assets/images/nikeImg.png',
+      'name': 'Adidas Sneakers',
+      'type': 'Casual',
+      'price': 220.0
+    },
+    {
+      'image': 'assets/images/nikeImg.png',
+      'name': 'Puma Running',
+      'type': 'Sports',
+      'price': 240.0
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            screenHeader('Our', 'Products', false),
-            // Search
-            SearchComponent(), // Fixed typo here
-            // Product cards
-            const Padding(
-              padding: EdgeInsets.all(20),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ProductCardScreen(
-                      productTitle: 'NIKE AIR MAX 200',
-                      productType: 'Trending now',
-                      productPrice: 240.00,
-                      productImage:
-                          'assets/images/nikeImg3.jpg', // This should now work
-                    ),
-                    ProductCardScreen(
-                      productTitle: 'NIKE AIR MAX 97',
-                      productType: 'Best Seller',
-                      productPrice: 220.00,
-                      productImage:
-                          'assets/images/nikeImg2.jpg', // This should now work
-                    ),
-                  ],
-                ),
-              ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          Expanded(flex: 1, child: screenHeader('Our', 'Products', false)),
+          // Search
+          Expanded(flex: 1, child: SearchComponent()),
+          // Categories
+          Expanded(child: CategoryHorizentalList()) ,
+          // Product cards
+          Expanded(
+            flex: 2,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: productCard.length,
+              itemBuilder: (context, index) {
+                return ProductCardScreen(
+                    productTitle: productCard[index]['name'],
+                    productType: productCard[index]['type'],
+                    productPrice: productCard[index]['price'],
+                    productImage: productCard[index]['image']);
+              },
             ),
-          ],
-        ),
+          ),
+          
+          Expanded( flex:1, child:  SizedBox(height: 100,))
+        ],
       ),
     );
   }

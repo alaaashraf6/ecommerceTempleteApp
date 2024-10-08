@@ -88,11 +88,11 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
         physics:
             const NeverScrollableScrollPhysics(), // swipe navigation handling is not supported
         controller: _motionTabBarController,
-        children: const <Widget>[
+        children:  <Widget>[
           ProductScreen(),
-          SearchScreen(),
-          CartScreen(),
-          FavoritesScreen(),
+          const SearchScreen(),
+          const CartScreen(),
+          const FavoritesScreen(),
         ],
       ),
     );

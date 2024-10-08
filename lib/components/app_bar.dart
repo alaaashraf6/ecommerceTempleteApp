@@ -5,7 +5,7 @@ AppBar appBarOfApp() {
   return AppBar(
     backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
     leading: Container(
-      margin: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(9.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -21,7 +21,7 @@ AppBar appBarOfApp() {
       child: IconButton(
         onPressed: () {},
         icon: const Icon(Icons.menu_sharp),
-        iconSize: 25,
+        iconSize: 20,
       ),
     ),
     actions: [

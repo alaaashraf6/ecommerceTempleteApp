@@ -18,7 +18,7 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
   List<Widget> screens = [
-    const ProductScreen(),
+     ProductScreen(),
     const SearchScreen(),
     const CartScreen(),
     const FavoritesScreen(),
