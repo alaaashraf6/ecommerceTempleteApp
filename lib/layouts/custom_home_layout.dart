@@ -18,20 +18,11 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
-  // TabController? _tabController;
   MotionTabBarController? _motionTabBarController;
 
   @override
   void initState() {
     super.initState();
-    //// Use normal tab controller
-    // _tabController = TabController(
-    //   initialIndex: 1,
-    //   length: 4,
-    //   vsync: this,
-    // );
-
-    //// use "MotionTabBarController" to replace with "TabController", if you need to programmatically change the tab
     _motionTabBarController = MotionTabBarController(
       initialIndex: 0,
       length: 4,
@@ -41,8 +32,6 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    // super.dispose();
-    // _motionTabBarController!.dispose();
     _motionTabBarController?.dispose();
     super.dispose();
   }
@@ -54,9 +43,9 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
       appBar: appBarOfApp(),
       bottomNavigationBar: MotionTabBar(
         controller:
-            _motionTabBarController, // ADD THIS if you need to change your tab programmatically
+            _motionTabBarController, 
         initialSelectedTab: "Products",
-        useSafeArea: true, // default: true, apply safe area wrapper
+        useSafeArea: true, 
         labels: const ["Products", "Search", "Cart", "Favorites"],
         icons: const [
           Icons.home,
@@ -64,7 +53,6 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
           Icons.shopping_bag_outlined,
           Icons.favorite_border_outlined
         ],
-
         tabSize: 40,
         tabBarHeight: 55,
         textStyle: const TextStyle(
@@ -86,7 +74,7 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
       ),
       body: TabBarView(
         physics:
-            const NeverScrollableScrollPhysics(), // swipe navigation handling is not supported
+            const NeverScrollableScrollPhysics(), 
         controller: _motionTabBarController,
         children:  <Widget>[
           ProductScreen(),

@@ -1,3 +1,4 @@
+import 'package:eccomerce_templete_app/Constants/colors.dart';
 import 'package:eccomerce_templete_app/modules/products/product_details/available_sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -8,23 +9,27 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+    leadingWidth: 70,
+        
           backgroundColor: const Color.fromRGBO(234, 234, 234, 1),
-          leading: Container(
-            width: 40,
-            height: 40,
-            margin: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: const Color.fromRGBO(234, 234, 234, 1),
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(8.0)),
-            child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  size: 15,
-                )),
+          leading: Padding(
+           padding:  const EdgeInsets.symmetric(horizontal: 10) ,
+            child: Container(
+              margin: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                  color: const Color.fromRGBO(234, 234, 234, 1),
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8.0)),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 15,
+                    color: Colors.grey,
+                  )),
+            ),
           ),
           actions: [
             Container(
@@ -56,7 +61,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: Color.fromRGBO(234, 234, 234, 1),
                 ),
-                child: Image.asset('assets/images/nikeImg4.png'),
+                child: Column(children: [Image.asset('assets/images/nikeImg4.png'), CategoryHorizentalList()]),
               ),
             ),
             Expanded(

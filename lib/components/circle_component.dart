@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore_for_file: non_constant_identifier_names
 Widget CircleComponent(
     {required Widget child,
     double width = 50.0,

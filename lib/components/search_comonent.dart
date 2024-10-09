@@ -1,5 +1,3 @@
-import 'package:eccomerce_templete_app/components/circle_component.dart';
-import 'package:eccomerce_templete_app/modules/products/product_details/product_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class SearchComponent extends StatelessWidget {

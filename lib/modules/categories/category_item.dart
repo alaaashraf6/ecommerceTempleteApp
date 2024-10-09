@@ -6,6 +6,8 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
+      height: 50,
+      width: 200,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         border: Border.all() 
@@ -13,7 +15,7 @@ class CategoryItem extends StatelessWidget {
       child: Row(
         children: [
           Image.asset('assets/images/nikeImg.png' ,width: 40 , height: 40,) ,
-          Text('Sneakers')
+          const Text('Sneakers')
         ],
       ),
     );

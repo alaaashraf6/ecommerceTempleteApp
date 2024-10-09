@@ -5,9 +5,14 @@ import 'package:eccomerce_templete_app/modules/products/product_card/product_car
 import 'package:flutter/material.dart';
 import '../../components/screen_header.dart';
 
-class ProductScreen extends StatelessWidget {
-  ProductScreen({super.key});
+class ProductScreen extends StatefulWidget {
+  const ProductScreen({super.key});
 
+  @override
+  State<ProductScreen> createState() => _ProductScreenState();
+}
+
+class _ProductScreenState extends State<ProductScreen> {
    List<Map<String, dynamic>> productCard = [
     {
       'image': 'assets/images/nikeImg.png',
@@ -35,15 +40,17 @@ class ProductScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          Expanded(flex: 1, child: screenHeader('Our', 'Products', false)),
+          
+          screenHeader('Our', 'Products', false),
           // Search
-          Expanded(flex: 1, child: SearchComponent()),
+          SearchComponent(),
           // Categories
-          Expanded(child: CategoryHorizentalList()) ,
+          const CategoryHorizentalList() ,
           // Product cards
-          Expanded(
-            flex: 2,
-            child: ListView.builder(
+          SizedBox(
+            height: 260,
+            child: ListView.separated(
+              separatorBuilder:(context , index) { return const SizedBox(width: 5,);},
               scrollDirection: Axis.horizontal,
               itemCount: productCard.length,
               itemBuilder: (context, index) {
@@ -56,7 +63,6 @@ class ProductScreen extends StatelessWidget {
             ),
           ),
           
-          Expanded( flex:1, child:  SizedBox(height: 100,))
         ],
       ),
     );
