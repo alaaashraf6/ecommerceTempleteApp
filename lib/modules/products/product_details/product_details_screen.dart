@@ -1,19 +1,25 @@
 import 'package:eccomerce_templete_app/Constants/colors.dart';
+import 'package:eccomerce_templete_app/components/price_text.dart';
 import 'package:eccomerce_templete_app/modules/products/product_details/available_sizes.dart';
+import 'package:eccomerce_templete_app/modules/products/product_details/product_images.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  const ProductDetailsScreen({required this.productName , required this.productPrice , required this.productImage ,super.key});
+
+ final String productName ;
+ final double productPrice ;
+ final String productImage ;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-    leadingWidth: 70,
-        
+          leadingWidth: 70,
           backgroundColor: const Color.fromRGBO(234, 234, 234, 1),
           leading: Padding(
-           padding:  const EdgeInsets.symmetric(horizontal: 10) ,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Container(
               margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
@@ -53,65 +59,55 @@ class ProductDetailsScreen extends StatelessWidget {
             )
           ]),
       body: Container(
-        color: const Color.fromRGBO(234, 234, 234, 1),
+        color: borderColor,
         child: Column(
           children: [
-            Expanded(
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Color.fromRGBO(234, 234, 234, 1),
+            ProductImages(productImage: productImage,),
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadiusDirectional.only(
+                  topEnd: Radius.circular(30.0),
+                  topStart: Radius.circular(30.0),
                 ),
-                child: Column(children: [Image.asset('assets/images/nikeImg4.png'), CategoryHorizentalList()]),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadiusDirectional.only(
-                    topEnd: Radius.circular(20.0),
-                    topStart: Radius.circular(20.0),
-                  ),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('this is text'),
-                          Column(
-                            children: [Text('price'), Text('Rate')],
-                          )
-                        ],
+              child:  Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(productName),
+                        Column(
+                          children: [PriceText(productPrice: productPrice), const Text('Rate')],
+                        )
+                      ],
+                    ),
+                    // available sizes
+                    const Text('Available Sizes'),
+                    const Row(children: [
+                      AvailableSizes(color: Colors.white),
+                      AvailableSizes(
+                        color: Color.fromRGBO(252, 108, 32, 1),
                       ),
-                      // available sizes
-                      Text('Available Sizes'),
-                      Row(children: [
-                        AvailableSizes(color: Colors.white),
-                        AvailableSizes(
-                          color: Color.fromRGBO(252, 108, 32, 1),
-                        ),
-                        AvailableSizes(color: Colors.white),
-                        AvailableSizes(color: Colors.white),
-                      ]),
-                      // Colors
-                      Text('Colors'),
-                      // Descriptions
-                      Text('Discription'),
-                      Text(
-                        'This is an example of multi-line text in Flutter. '
-                        'If the text is too long to fit in a single line, '
-                        'it will automatically wrap into multiple lines.',
-                        style: TextStyle(fontSize: 18),
-                        maxLines: null,
-                        overflow: TextOverflow.visible,
-                      ),
-                    ],
-                  ),
+                      AvailableSizes(color: Colors.white),
+                      AvailableSizes(color: Colors.white),
+                    ]),
+                    // Colors
+                    const Text('Colors'),
+                    // Descriptions
+                    const Text('Discription'),
+                    const Text(
+                      'This is an example of multi-line text in Flutter. '
+                      'If the text is too long to fit in a single line, '
+                      'it will automatically wrap into multiple lines.',
+                      style: TextStyle(fontSize: 18),
+                      maxLines: null,
+                      overflow: TextOverflow.visible,
+                    ),
+                  ],
                 ),
               ),
             )

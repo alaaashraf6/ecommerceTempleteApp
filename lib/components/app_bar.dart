@@ -30,8 +30,11 @@ AppBar appBarOfApp() {
       ),
     ),
     actions: [
-      CircleComponent(
-        child: Image.asset('assets/images/profile.jpg'),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: CircleComponent(
+          child: Image.asset('assets/images/profile.jpg'),
+        ),
       )
     ],
   );

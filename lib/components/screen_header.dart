@@ -2,27 +2,30 @@ import 'package:flutter/material.dart';
 
 Widget screenHeader(
     String additionTitle, String screenTitle, bool additionalIcon) {
-  return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-    Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          additionTitle,
-          style: const TextStyle(
-            fontSize: 20,
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 20),
+    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            additionTitle,
+            style: const TextStyle(
+              fontSize: 20,
+            ),
           ),
-        ),
-        Text(
-          screenTitle,
-          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-        ),
-      ],
-    ),
-    additionalIcon
-        ? const Icon(Icons.delete_outline,
-            color: Color.fromRGBO(252, 108, 32, 1))
-        : const SizedBox(
-            width: 1,
-          )
-  ]);
+          Text(
+            screenTitle,
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+      additionalIcon
+          ? const Icon(Icons.delete_outline,
+              color: Color.fromRGBO(252, 108, 32, 1))
+          : const SizedBox(
+              width: 1,
+            )
+    ]),
+  );
 }

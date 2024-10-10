@@ -4,7 +4,6 @@ import 'package:eccomerce_templete_app/modules/Search/search_screen.dart';
 import 'package:eccomerce_templete_app/modules/products/products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
-import 'package:motion_tab_bar_v2/motion-badge.widget.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 import 'package:eccomerce_templete_app/components/app_bar.dart';
 
