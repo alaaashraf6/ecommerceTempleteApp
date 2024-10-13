@@ -7,7 +7,7 @@ AppBar appBarOfApp() {
     leadingWidth: 70,
     backgroundColor: backgroundColor,
     leading: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10 , vertical: 4),
       child: Container(
         margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
