@@ -34,7 +34,7 @@ class _CategoryHorizentalListState extends State<CategoryHorizentalList> {
       child: SizedBox(
         height: 50,
         child: ListView.separated(
-            separatorBuilder: (context, index) {
+            separatorBuilder: (context, index) { 
               return const SizedBox(
                 width: 5,
               );

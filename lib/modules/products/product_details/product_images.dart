@@ -22,11 +22,11 @@ class _ProductImagesState extends State<ProductImages> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(bottom: 10),
+      padding: const EdgeInsetsDirectional.only(bottom: 10),
       child: Column(
         children: [
           // Main image
-          Container(
+          SizedBox(
             child: Image.asset(
               selecctedImage.isEmpty ? widget.productImage : selecctedImage  ,
               height: 200,
@@ -49,7 +49,7 @@ class _ProductImagesState extends State<ProductImages> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              border: Border.all(color: selecctedIndex == index ? primaryColor  : Colors.grey) ,
+                              border: Border.all(color: selecctedIndex == index ? primaryColor  : borderColor) ,
                               borderRadius: BorderRadius.circular(10)
                             ),
                             margin: const EdgeInsets.symmetric(horizontal: 5.0),
