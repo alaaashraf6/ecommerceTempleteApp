@@ -4,6 +4,7 @@ import 'package:eccomerce_templete_app/Constants/colors.dart';
 import 'package:eccomerce_templete_app/components/price_text.dart';
 import 'package:eccomerce_templete_app/modules/products/product_details/product_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating/flutter_rating.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({
@@ -122,8 +123,18 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           ),
                           Column(
                             children: [
-                              PriceText(productPrice: widget.productPrice),
-                              const Text('Rate'),
+                              PriceText(productPrice: widget.productPrice ,  dollerSignSize: 20,),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 7),
+                                child: StarRating(
+                                  size: 15.0,
+                                  rating: 4,
+                                  color: Colors.amber[600],
+                                  borderColor: Colors.grey,
+                                  allowHalfRating: true,
+                                  starCount: 5,
+                                ),
+                              )
                             ],
                           ),
                         ],
@@ -141,7 +152,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ),
                       const SizedBox(height: 10),
-              
+
                       SizedBox(
                         height: 50, // Set a fixed height for the size list
                         child: ListView.separated(
@@ -152,7 +163,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           itemCount: sizeList.length,
                           itemBuilder: (context, index) {
                             final sizeText = sizeList[index];
-              
+
                             return InkWell(
                               onTap: () {
                                 setState(() {
@@ -168,7 +179,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.orange.withOpacity(
-                                          selectedSizeIndex == index ? 0.1 : 0.0),
+                                          selectedSizeIndex == index
+                                              ? 0.1
+                                              : 0.0),
                                       spreadRadius: 1,
                                       blurRadius: 7,
                                       offset: const Offset(0, 3),
@@ -199,11 +212,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           },
                         ),
                       ),
-              
+
                       // __________________________Colors____________________________________________
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 20),
-              
                         child: Text(
                           'Colors',
                           style: TextStyle(
@@ -222,7 +234,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           itemCount: colorList.length,
                           itemBuilder: (context, index) {
                             final colorItem = colorList[index];
-                      
+
                             return InkWell(
                               onTap: () {
                                 setState(() {
@@ -231,11 +243,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               },
                               child: Center(
                                 child: CircleAvatar(
-                                  radius: 18,
+                                  radius: selectedColorIndex == index ? 15 : 18,
                                   backgroundColor: colorItem.withOpacity(0.1),
                                   child: Container(
-                                    width: 20,
-                                    height: 20,
+                                    width: selectedColorIndex == index ?18 :20,
+                                    height: selectedColorIndex == index ?18:20,
                                     decoration: BoxDecoration(
                                         color: colorItem,
                                         shape: BoxShape.circle,
@@ -247,7 +259,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                             offset: Offset(0, 3),
                                           ),
                                         ]),
-                                        child: selectedColorIndex == index ?const Icon(Icons.check , color: Colors.white, size: 15,): null,
+                                    child: selectedColorIndex == index
+                                        ? const Icon(
+                                            Icons.check,
+                                            color: Colors.white,
+                                            size: 15,
+                                          )
+                                        : null,
                                   ),
                                 ),
                               ),
@@ -255,7 +273,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           },
                         ),
                       ),
-              
+
                       // ____________________________________________________________________________
                       // Description
                       const SizedBox(height: 10),

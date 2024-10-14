@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   motion_tab_bar_v2: ^0.3.0
   carousel_slider: ^5.0.0
+  flutter_rating: ^2.0.2
 
 dev_dependencies:
   flutter_test:
