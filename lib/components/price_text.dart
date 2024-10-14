@@ -20,7 +20,7 @@ class PriceText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: '\$', // Dollar sign
+            text: '\$', 
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: dollerSignColor,

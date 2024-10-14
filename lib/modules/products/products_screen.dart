@@ -72,13 +72,12 @@ class _ProductScreenState extends State<ProductScreen> {
           //   ),
           // ),
           CarouselSlider(
-            
               options: CarouselOptions(
-                height: 370,
-                
-                autoPlay: true,
+                height: 300,
                 enlargeCenterPage: true,
-                viewportFraction: 0.5, 
+                disableCenter: true,
+                autoPlay: true,
+                viewportFraction: 0.6,
                 initialPage: 0 ,
                 // aspectRatio: 16 / 9,
               ),

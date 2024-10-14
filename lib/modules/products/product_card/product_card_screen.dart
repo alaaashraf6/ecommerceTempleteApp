@@ -25,66 +25,71 @@ class ProductCardScreen extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => ProductDetailsScreen(
-                productName: productTitle,
-                productPrice: productPrice,
-                productImage: productImage),
+              productName: productTitle,
+              productPrice: productPrice,
+              productImage: productImage,
+            ),
           ),
         );
       },
       child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.white,
-          ),
-          child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+        ),
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.only(left: 10),
+              // width: 150,
+              child: const Icon(
+                Icons.favorite_border,
+                color: Colors.grey,
+              ),
+            ),
+            Stack(
+              alignment: Alignment.center,
               children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  margin: const EdgeInsets.only(left: 20),
-                  width: 150,
-                  child: const Icon(
-                    Icons.favorite_border,
-                    color: Colors.grey,
+                CircleAvatar(
+                  radius: 40,
+                  backgroundColor: Colors.orange[50],
+                ),
+                Transform.rotate(
+                  angle: -0.5,
+                  child: Image.asset(
+                    productImage,
+                    width: 150,
                   ),
                 ),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundColor: Colors.orange[50],
-                    ),
-                    Transform.rotate(
-                      angle: -0.5,
-                      child: Image.asset(
-                        productImage,
-                        width: 150,
-                      ),
-                    ),
-                  ],
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0),
+              child: Text(
+                productTitle,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Text(
-                    productTitle,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 3),
+              child: Text(
+                productType,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: primaryColor,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Text(
-                    productType,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-                PriceText(productPrice: productPrice)
-              ])),
+              ),
+            ),
+            PriceText(productPrice: productPrice)
+          ],
+        ),
+      ),
     );
   }
 }
