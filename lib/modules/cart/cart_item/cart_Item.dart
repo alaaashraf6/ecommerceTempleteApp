@@ -22,6 +22,7 @@ class CartItem extends StatelessWidget {
         children: [
           Stack(
             alignment: Alignment.topLeft,
+            
             children: [
               Container(
                 decoration: BoxDecoration(
@@ -31,13 +32,18 @@ class CartItem extends StatelessWidget {
                 width: 50,
                 height: 50,
               ),
-              Transform.rotate(
-                angle: -0.6,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    'assets/images/nikeImg4.png',
-                    width: 50,
+              Positioned(
+                bottom: 20,
+                child: Transform.rotate(
+                  angle: -0.6,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      'assets/images/nikeImg4.png',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover
+                    ),
                   ),
                 ),
               ),

@@ -42,6 +42,7 @@ class ProductCardScreen extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+
               alignment: Alignment.topLeft,
               margin: const EdgeInsets.only(left: 10),
               // width: 150,
@@ -57,13 +58,16 @@ class ProductCardScreen extends StatelessWidget {
                   radius: 40,
                   backgroundColor: Colors.orange[50],
                 ),
-                Transform.rotate(
+                Positioned(
+                  bottom: 2,
+                  child: Transform.rotate(
                   angle: -0.5,
                   child: Image.asset(
                     productImage,
                     width: 150,
                   ),
-                ),
+                ),)
+                
               ],
             ),
             Padding(
