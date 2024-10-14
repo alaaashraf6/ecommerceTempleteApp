@@ -54,9 +54,12 @@ class ProductCardScreen extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                CircleAvatar(
-                  radius: 40,
-                  backgroundColor: Colors.orange[50],
+                Padding(
+                  padding: const EdgeInsets.only(top: 10  , right: 10),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.orange[50],
+                  ),
                 ),
                 Positioned(
                   bottom: 2,
@@ -64,7 +67,7 @@ class ProductCardScreen extends StatelessWidget {
                   angle: -0.5,
                   child: Image.asset(
                     productImage,
-                    width: 150,
+                    width: 120,
                   ),
                 ),)
                 

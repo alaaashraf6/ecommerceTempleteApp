@@ -21,16 +21,19 @@ class CartItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
-            alignment: Alignment.topLeft,
+            alignment: Alignment.center,
             
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: const Color.fromRGBO(234, 234, 234, 1),
+              Padding(
+                padding: const EdgeInsets.only(top: 5 , right: 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: const Color.fromRGBO(234, 234, 234, 1),
+                  ),
+                  width: 50,
+                  height: 50,
                 ),
-                width: 50,
-                height: 50,
               ),
               Positioned(
                 bottom: 20,
