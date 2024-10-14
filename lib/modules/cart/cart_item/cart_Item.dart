@@ -1,27 +1,37 @@
+import 'package:eccomerce_templete_app/components/price_text.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
+  const CartItem(
+      {super.key,
+      required this.img,
+      required this.productName,
+      required this.productPrice});
+
+  final String img;
+  final String productName;
+  final double productPrice;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(alignment: Alignment.topRight, children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.0),
-                color: const Color.fromRGBO(234, 234, 234, 1),
+          Stack(
+            alignment: Alignment.topLeft,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: const Color.fromRGBO(234, 234, 234, 1),
+                ),
+                width: 50,
+                height: 50,
               ),
-              width: 50,
-              height: 50,
-            ),
-            Container(
-              width: 100,
-              padding: const EdgeInsetsDirectional.only(start: 20, bottom: 50),
-              child: Transform.rotate(
+              Transform.rotate(
                 angle: -0.6,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
@@ -31,15 +41,29 @@ class CartItem extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-          ]),
+            ],
+          ),
           const Column(
-            children: [Text('product name'), Text('price')],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Text(
+                  'NIKE AIR MAX 79',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+              ),
+              PriceText(productPrice: 280)
+            ],
           ),
           Container(
-            decoration:
-                const BoxDecoration(color: Color.fromRGBO(234, 234, 234, 1)),
-            child: const Text('x1'),
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: const Color.fromRGBO(234, 234, 234, 1),
+            ),
+            child: const Center(child: Text('x1')),
           )
         ],
       ),
