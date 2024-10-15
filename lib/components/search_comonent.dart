@@ -11,27 +11,34 @@ class SearchComponent extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-              height: 40,
-              width: 250,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: TextFormField(
-                controller: searchController,
-                decoration: InputDecoration(
-                  fillColor: borderColor,
-                  filled: true,
-                  border: InputBorder.none,
-                  hintText: 'Search product',
-                  hintStyle: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[400],
-                  ),
-                  prefixIcon: const Icon(Icons.search),
+          Expanded(
+            child: TextFormField(
+              controller: searchController,
+              decoration: InputDecoration(
+                fillColor: borderColor,
+                filled: true,
+                border: InputBorder.none,
+                hintText: 'Search product',
+                hintStyle: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey[400],
                 ),
-              )),
+                contentPadding: EdgeInsets.zero,
+                prefixIcon: const Icon(Icons.search),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(
+                    8.0,
+                  ),
+                  borderSide: BorderSide(
+                    color: Colors.grey[400]!,
+                    width: 0.0,
+                  )
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 11.0),
           Container(
             height: 40,
             width: 40,
