@@ -15,19 +15,19 @@ class _CartScreenState extends State<CartScreen> {
   List<Map<String, dynamic>> productInfo = [
     {
       'image': 'assets/images/nikeImg.png',
-      'name': 'Nike Shoes',
+      'name': 'Nike W MAX 200',
       'type': 'Trending Now',
-      'price': 200.0
+      'price': 250.0
     },
     {
       'image': 'assets/images/nikeImg.png',
-      'name': 'Adidas Sneakers',
+      'name': 'NIke AIR Max 97',
       'type': 'Best Seller',
       'price': 220.0
     },
     {
       'image': 'assets/images/nikeImg.png',
-      'name': 'Puma Running',
+      'name': 'NIke AIR Max 260',
       'type': 'Trending Now',
       'price': 240.0
     },

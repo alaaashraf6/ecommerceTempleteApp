@@ -1,3 +1,4 @@
+import 'package:eccomerce_templete_app/Constants/colors.dart';
 import 'package:eccomerce_templete_app/components/price_text.dart';
 import 'package:flutter/material.dart';
 
@@ -20,33 +21,32 @@ class CartItem extends StatelessWidget {
         vertical: 13.0,
       ),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Stack(
             alignment: Alignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 5, right: 10),
+                padding: const EdgeInsets.only(top: 15, right: 10),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
-                    color: const Color.fromRGBO(234, 234, 234, 1),
+                    color: borderColor,
                   ),
                   width: 70.0,
                   height: 70.0,
                 ),
               ),
               Positioned(
-                bottom: 20,
+                bottom: 15,
                 child: Transform.rotate(
                   angle: -0.6,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
-                      'assets/images/nikeImg4.png',
-                      width: 70.0,
-                      height: 70.0,
+                      img,
+                      width: 90.0,
+                      height: 90.0,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -55,20 +55,20 @@ class CartItem extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 21.0),
-          const Column(
+           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Text(
-                  'NIKE AIR MAX 79',
-                  style: TextStyle(
+                  productName.toUpperCase(),
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-              PriceText(productPrice: 280),
+              PriceText(productPrice: productPrice),
             ],
           ),
           const Spacer(),

@@ -33,67 +33,64 @@ class ProductCardScreen extends StatelessWidget {
         );
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
         ),
-        child: Column(
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              margin: const EdgeInsets.only(left: 10),
-              child: const Icon(
-                Icons.favorite_border,
-                color: Colors.grey,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.topLeft,
+                // margin: const EdgeInsets.only(left: 20 , top: 20),
+                child: const Icon(
+                  Icons.favorite_border,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            // ______________________________product Image______________________________
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10, right: 10),
-                  child: CircleAvatar(
-                    radius: 40,
+              // ______________________________product Image______________________________
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 50,
                     backgroundColor: Colors.orange[50],
                   ),
-                ),
-                Positioned(
-                  bottom: 2,
-                  child: Transform.rotate(
-                    angle: -0.5,
-                    child: Image.asset(
-                      productImage,
-                      width: 120,
+                  Positioned(
+                    child: Transform.rotate(
+                      angle: -0.5,
+                      child: Image.asset(productImage,
+                          width: 180 , ),
                     ),
-                  ),
-                )
-              ],
-            ),
-            // ___________________________________product info ________________________
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Text(
+                  )
+                ],
+              ),
+              // ___________________________________product info ________________________
+              Text(
                 productTitle,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5),
-              child: Text(
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
                 productType,
                 style: const TextStyle(
                   fontSize: 16,
                   color: primaryColor,
                 ),
               ),
-            ),
-            PriceText(productPrice: productPrice)
-          ],
+              const SizedBox(
+                height: 4,
+              ),
+
+              PriceText(productPrice: productPrice),
+            ],
+          ),
         ),
       ),
     );

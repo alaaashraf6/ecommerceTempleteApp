@@ -49,7 +49,7 @@ class _ProductScreenState extends State<ProductScreen> {
 
           CarouselSlider(
               options: CarouselOptions(
-                height: 300,
+                  height: 310,
                 enlargeCenterPage: true,
                 disableCenter: true,
                 autoPlay: true,
@@ -57,13 +57,11 @@ class _ProductScreenState extends State<ProductScreen> {
                 initialPage: 0,
               ),
               items: productCards
-                  .map((item) => ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: ProductCardScreen(
-                          productTitle: item['name'],
-                          productType: item['type'],
-                          productPrice: item['price'],
-                          productImage: item['image'])))
+                  .map((item) => ProductCardScreen(
+                      productTitle: item['name'],
+                      productType: item['type'],
+                      productPrice: item['price'],
+                      productImage: item['image']))
                   .toList()),
         ],
       ),

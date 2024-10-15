@@ -9,6 +9,7 @@ Widget circleComponent(
   return Container(
     margin: const EdgeInsets.all(8),
     decoration: BoxDecoration(
+      // color: color,
       borderRadius: BorderRadius.circular(8.0),
     ),
     child: CircleAvatar(

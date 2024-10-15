@@ -39,7 +39,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         leadingWidth: 70,
-        backgroundColor: backgroundColor,
+        backgroundColor: Colors.grey[100],
         leading: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
           child: Container(
@@ -92,13 +92,22 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
+        shape: const CircleBorder(),
+        onPressed: () {},
+        child: const Icon(
+          Icons.shopping_bag_outlined,
+          color: Colors.white,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
-          color: backgroundColor,
+          color: Colors.grey[100],
           child: Column(
             children: [
               // _______________________________product images________________________
-              
+
               ProductImages(productImage: widget.productImage),
 
               // ____________________________product info____________________________
@@ -115,6 +124,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Center(
+                        child: Container(
+                          width: 40,
+                          height: 5,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -161,7 +179,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       const SizedBox(height: 10),
 
                       SizedBox(
-                        height: 50,
+                        height: 40,
                         child: ListView.separated(
                           separatorBuilder: (context, index) {
                             return const SizedBox(width: 5);
@@ -178,6 +196,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 });
                               },
                               child: Container(
+                                width: 60,
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 margin:
@@ -203,7 +222,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                         : borderColor,
                                     width: 2,
                                   ),
-                                  borderRadius: BorderRadius.circular(15),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Center(
                                   child: Text(
