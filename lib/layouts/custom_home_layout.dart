@@ -42,10 +42,8 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
       backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
       appBar: appBarOfApp(),
       bottomNavigationBar: MotionTabBar(
-        
         controller: _motionTabBarController,
         initialSelectedTab: "Products",
-  
         useSafeArea: true,
         labels: const ["Products", "Search", "Cart", "Favorites"],
         icons: const [
@@ -67,8 +65,6 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
         tabSelectedColor: primaryColor,
         tabIconSelectedColor: Colors.white,
         tabBarColor: Colors.white,
-        
-        
         onTabItemSelected: (int value) {
           setState(() {
             _motionTabBarController!.index = value;
