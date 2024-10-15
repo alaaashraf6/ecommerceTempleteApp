@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget CircleComponent(
+Widget circleComponent(
     {required Widget child,
     double width = 50.0,
     double height = 50.0,
@@ -9,7 +9,6 @@ Widget CircleComponent(
   return Container(
     margin: const EdgeInsets.all(8),
     decoration: BoxDecoration(
-      // color: color,
       borderRadius: BorderRadius.circular(8.0),
     ),
     child: CircleAvatar(
@@ -19,7 +18,7 @@ Widget CircleComponent(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(15.0)),
         ),
-        clipBehavior: Clip.antiAliasWithSaveLayer, // to clip image
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         child: child,
       ),
     ),

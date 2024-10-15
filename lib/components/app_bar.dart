@@ -1,5 +1,5 @@
-import 'package:eccomerce_templete_app/Components/circle_component.dart';
 import 'package:eccomerce_templete_app/Constants/colors.dart';
+import 'package:eccomerce_templete_app/components/circle_component.dart';
 import 'package:flutter/material.dart';
 
 AppBar appBarOfApp() {
@@ -12,13 +12,13 @@ AppBar appBarOfApp() {
         margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(10.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2), // Shadow color
-              spreadRadius: 2, // Spread radius
-              blurRadius: 5, // Blur radius
-              offset: const Offset(0, 3), // Shadow position
+              color: Colors.grey.withOpacity(0.2), 
+              spreadRadius: 0.2, 
+              blurRadius: 5, 
+              offset: const Offset(0, 2), 
             ),
           ],
         ),
@@ -32,7 +32,7 @@ AppBar appBarOfApp() {
     actions: [
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: CircleComponent(
+        child: circleComponent(
           child: Image.asset('assets/images/profile.jpg'),
         ),
       )

@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:eccomerce_templete_app/Constants/colors.dart';
 import 'package:eccomerce_templete_app/components/price_text.dart';
 import 'package:eccomerce_templete_app/modules/products/product_details/product_images.dart';
@@ -39,7 +38,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     log(sizeList[0]);
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 75,
+        leadingWidth: 70,
         backgroundColor: backgroundColor,
         leading: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
@@ -69,15 +68,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: Container(
-              height: 40,
-              width: 40,
+              height: 35,
+              width: 35,
               margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(10.0),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Colors.grey.withOpacity(0.2),
                     spreadRadius: 2,
                     blurRadius: 5,
                     offset: const Offset(0, 3),
@@ -87,6 +86,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               child: const Icon(
                 Icons.favorite,
                 color: Color.fromRGBO(252, 108, 32, 1),
+                size: 18,
               ),
             ),
           ),
@@ -97,7 +97,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           color: backgroundColor,
           child: Column(
             children: [
+              // _______________________________product images________________________
+              
               ProductImages(productImage: widget.productImage),
+
+              // ____________________________product info____________________________
               Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -123,7 +127,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           ),
                           Column(
                             children: [
-                              PriceText(productPrice: widget.productPrice ,  dollerSignSize: 20,),
+                              PriceText(
+                                productPrice: widget.productPrice,
+                                dollerSignSize: 20,
+                              ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 7),
                                 child: StarRating(
@@ -154,7 +161,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       const SizedBox(height: 10),
 
                       SizedBox(
-                        height: 50, // Set a fixed height for the size list
+                        height: 50,
                         child: ListView.separated(
                           separatorBuilder: (context, index) {
                             return const SizedBox(width: 5);
@@ -246,8 +253,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                   radius: selectedColorIndex == index ? 15 : 18,
                                   backgroundColor: colorItem.withOpacity(0.1),
                                   child: Container(
-                                    width: selectedColorIndex == index ?18 :20,
-                                    height: selectedColorIndex == index ?18:20,
+                                    width:
+                                        selectedColorIndex == index ? 18 : 20,
+                                    height:
+                                        selectedColorIndex == index ? 18 : 20,
                                     decoration: BoxDecoration(
                                         color: colorItem,
                                         shape: BoxShape.circle,

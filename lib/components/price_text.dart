@@ -16,11 +16,10 @@ class PriceText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
-      
       text: TextSpan(
         children: [
           TextSpan(
-            text: '\$', 
+            text: '\$',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: dollerSignColor,
@@ -29,7 +28,10 @@ class PriceText extends StatelessWidget {
           TextSpan(
             text: '$productPrice',
             style: const TextStyle(
-                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),

@@ -1,7 +1,8 @@
+import 'package:eccomerce_templete_app/Constants/colors.dart';
 import 'package:eccomerce_templete_app/modules/Cart/cart_screen.dart';
 import 'package:eccomerce_templete_app/modules/Favorites/favorites_screen.dart';
-import 'package:eccomerce_templete_app/modules/Search/search_screen.dart';
 import 'package:eccomerce_templete_app/modules/products/products_screen.dart';
+import 'package:eccomerce_templete_app/modules/search_screen/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
@@ -41,10 +42,11 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
       backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
       appBar: appBarOfApp(),
       bottomNavigationBar: MotionTabBar(
-        controller:
-            _motionTabBarController, 
+        
+        controller: _motionTabBarController,
         initialSelectedTab: "Products",
-        useSafeArea: true, 
+  
+        useSafeArea: true,
         labels: const ["Products", "Search", "Cart", "Favorites"],
         icons: const [
           Icons.home,
@@ -62,9 +64,11 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
         tabIconColor: Colors.grey,
         tabIconSize: 28.0,
         tabIconSelectedSize: 26.0,
-        tabSelectedColor: const Color.fromRGBO(252, 108, 32, 1),
+        tabSelectedColor: primaryColor,
         tabIconSelectedColor: Colors.white,
         tabBarColor: Colors.white,
+        
+        
         onTabItemSelected: (int value) {
           setState(() {
             _motionTabBarController!.index = value;
@@ -72,14 +76,13 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
         },
       ),
       body: TabBarView(
-        physics:
-            const NeverScrollableScrollPhysics(), 
+        physics: const NeverScrollableScrollPhysics(),
         controller: _motionTabBarController,
-        children:  <Widget>[
+        children: const <Widget>[
           ProductScreen(),
-          const SearchScreen(),
-          const CartScreen(),
-          const FavoritesScreen(),
+          SearchScreen(),
+          CartScreen(),
+          FavoritesScreen(),
         ],
       ),
     );

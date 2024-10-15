@@ -41,36 +41,12 @@ class _ProductScreenState extends State<ProductScreen> {
       child: Column(
         children: [
           screenHeader('Our', 'Products', false),
-          // Search
+          // ___________________________Search _____________________
           SearchComponent(),
-          // Categories
+          // _________________________Categories______________________
           const CategoryHorizentalList(),
-          // Product cards
-        
-          // SizedBox(
+          // _________________________Product cards____________________
 
-          //   // height: 260,
-          //   child: Padding(
-          //     padding: const EdgeInsetsDirectional.only(top: 30),
-          //     child: ListView.separated(
-          //       separatorBuilder: (context, index) {
-          //         return const SizedBox(
-          //           width: 25,
-          //         );
-          //       },
-          //       scrollDirection: Axis.horizontal,
-          //       itemCount: productCards.length,
-          //       itemBuilder: (context, index) {
-          //         return productCardsScreen(
-          //           productTitle: productCards[index]['name'],
-          //           productType: productCards[index]['type'],
-          //           productPrice: productCards[index]['price'],
-          //           productImage: productCards[index]['image'],
-          //         );
-          //       },
-          //     ),
-          //   ),
-          // ),
           CarouselSlider(
               options: CarouselOptions(
                 height: 300,
@@ -78,14 +54,16 @@ class _ProductScreenState extends State<ProductScreen> {
                 disableCenter: true,
                 autoPlay: true,
                 viewportFraction: 0.6,
-                initialPage: 0 ,
-                // aspectRatio: 16 / 9,
+                initialPage: 0,
               ),
               items: productCards
-                  .map((item ) => ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: ProductCardScreen(productTitle: item['name'], productType: item['type'], productPrice: item['price'], productImage: item['image'])
-                  ))
+                  .map((item) => ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: ProductCardScreen(
+                          productTitle: item['name'],
+                          productType: item['type'],
+                          productPrice: item['price'],
+                          productImage: item['image'])))
                   .toList()),
         ],
       ),

@@ -57,7 +57,7 @@ class _CategoryHorizentalListState extends State<CategoryHorizentalList> {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.orange.withOpacity(selectedCategoryIndex == index ?0.1 : 0.0), // Shadow color
+                        color: Colors.orange.withOpacity(selectedCategoryIndex == index ?0.1 : 0.0), 
                         spreadRadius: 1, 
                         blurRadius: 7, 
                         offset: const Offset(0, 3), 

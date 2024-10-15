@@ -83,13 +83,13 @@ class _CartScreenState extends State<CartScreen> {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: primaryColor, // Background color
+                backgroundColor: primaryColor,
                 elevation: 5, // Elevation
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Rounded corners
+                  borderRadius: BorderRadius.circular(10.0), 
                 ),
-                padding: const EdgeInsets.symmetric(vertical: 15.0), // Padding
-              ), // Set the background color
+                padding: const EdgeInsets.symmetric(vertical: 15.0), 
+              ), 
               child: const Text(
                 'Next',
                 style: TextStyle(color: Colors.white),

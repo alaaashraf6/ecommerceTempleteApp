@@ -25,7 +25,6 @@ class _ProductImagesState extends State<ProductImages> {
       padding: const EdgeInsetsDirectional.only(bottom: 10),
       child: Column(
         children: [
-          // Main image
           SizedBox(
             child: Image.asset(
               selecctedImage.isEmpty ? widget.productImage : selecctedImage  ,
@@ -49,7 +48,8 @@ class _ProductImagesState extends State<ProductImages> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              border: Border.all(color: selecctedIndex == index ? primaryColor  : borderColor) ,
+                              border: Border.all(color: selecctedIndex == index ? primaryColor  : borderColor ,width: 2.0) ,
+                            
                               borderRadius: BorderRadius.circular(10)
                             ),
                             margin: const EdgeInsets.symmetric(horizontal: 5.0),

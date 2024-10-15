@@ -39,23 +39,21 @@ class ProductCardScreen extends StatelessWidget {
           color: Colors.white,
         ),
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-
               alignment: Alignment.topLeft,
               margin: const EdgeInsets.only(left: 10),
-              // width: 150,
               child: const Icon(
                 Icons.favorite_border,
                 color: Colors.grey,
               ),
             ),
+            // ______________________________product Image______________________________
             Stack(
               alignment: Alignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10  , right: 10),
+                  padding: const EdgeInsets.only(top: 10, right: 10),
                   child: CircleAvatar(
                     radius: 40,
                     backgroundColor: Colors.orange[50],
@@ -64,17 +62,18 @@ class ProductCardScreen extends StatelessWidget {
                 Positioned(
                   bottom: 2,
                   child: Transform.rotate(
-                  angle: -0.5,
-                  child: Image.asset(
-                    productImage,
-                    width: 120,
+                    angle: -0.5,
+                    child: Image.asset(
+                      productImage,
+                      width: 120,
+                    ),
                   ),
-                ),)
-                
+                )
               ],
             ),
+            // ___________________________________product info ________________________
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0),
+              padding: const EdgeInsets.only(top: 20),
               child: Text(
                 productTitle,
                 style: const TextStyle(
@@ -84,7 +83,7 @@ class ProductCardScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 3),
+              padding: const EdgeInsets.symmetric(vertical: 5),
               child: Text(
                 productType,
                 style: const TextStyle(
