@@ -17,7 +17,7 @@ class _ProductImagesState extends State<ProductImages> {
     'assets/images/nikeImg4.png',
   ];
   String selecctedImage = '';
-  int selecctedIndex = 0;
+  int selecctedIndex =1 ;
 
   @override
   Widget build(BuildContext context) {
